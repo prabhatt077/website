@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowxen | AI Automation Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #5fa8d3;   /* light blue */
+      --dark: #1f2933;      /* dark gray */
+      --gray: #e5e7eb;      /* light gray */
+      --text: #374151;
+      --bg: #f9fafb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1f2933, #374151);
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: var(--dark);
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+
+    /* Process */
+    .steps {
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: 30px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #5fa8d3, #89c2d9);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .cta h2 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header>
+    <h1>Automate What Slows You Down</h1>
+    <p>Flowxen delivers AI-powered automation that streamlines workflows, eliminates repetitive tasks, and accelerates business growth.</p>
+    <a href="#contact" class="btn">Get a Free Consultation</a>
+  </header>
+
+  <!-- Why Flowxen -->
+  <section>
+    <h2>Why Flowxen</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>?? Productivity First</h3>
+        <p>Eliminate manual work and free your teams to focus on high-impact tasks.</p>
+      </div>
+      <div class="card">
+        <h3>?? Smart Automation</h3>
+        <p>Custom AI-driven workflows aligned with real business goals.</p>
+      </div>
+      <div class="card">
+        <h3>?? Built to Scale</h3>
+        <p>Automation systems that grow with your organization.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section>
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Workflow Automation</h3>
+        <p>End-to-end automation for sales, operations, and internal processes.</p>
+      </div>
+      <div class="card">
+        <h3>AI Integrations</h3>
+        <p>Connect tools, systems, and data for seamless operations.</p>
+      </div>
+      <div class="card">
+        <h3>Custom Solutions</h3>
+        <p>Tailored automation built around your business logic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section>
+    <h2>Our Process</h2>
+    <div class="steps">
+      <div class="step"><strong>Discover</strong> – Identify automation opportunities</div>
+      <div class="step"><strong>Design</strong> – Build a clear automation roadmap</div>
+      <div class="step"><strong>Deploy</strong> – Implement & test systems</div>
+      <div class="step"><strong>Optimize</strong> – Scale and improve continuously</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta" id="contact">
+    <h2>Ready to Automate Your Business?</h2>
+    <p>Turn automation into a competitive advantage with Flowxen.</p>
+    <br />
+    <a href="mailto:contact@flowxen.com" class="btn">Contact Us</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Flowxen. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
