@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flowxen | AI Automation Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Flowxen | Secure, Scalable AI Automation Systems</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary: #5fa8d3;   /* light blue */
-      --dark: #1f2933;      /* dark gray */
-      --gray: #e5e7eb;      /* light gray */
-      --text: #374151;
-      --bg: #f9fafb;
+      --primary: #5fa8d3;
+      --primary-dark: #2563eb;
+      --accent: #22c55e;
+      --dark: #020617;
+      --muted: #64748b;
+      --bg: #f8fafc;
+      --card: #ffffff;
     }
 
     * {
@@ -23,209 +27,359 @@
 
     body {
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      color: var(--dark);
+      line-height: 1.75;
     }
 
-    /* Header */
+    /* HERO */
     header {
-      background: linear-gradient(135deg, #1f2933, #374151);
+      background: radial-gradient(1200px 600px at 10% 10%, #1e293b, #020617);
       color: #fff;
-      padding: 80px 20px;
+      padding: 120px 20px 140px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
     header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 15px;
+      font-size: 3.6rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
     }
 
     header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
+      max-width: 820px;
+      margin: 0 auto 42px;
+      font-size: 1.3rem;
+      color: #e5e7eb;
     }
 
-    .btn {
-      background: var(--primary);
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 46px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #fff;
-      padding: 14px 30px;
-      border-radius: 6px;
+      padding: 18px 40px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: 600;
-      transition: 0.3s;
+      font-size: 1.05rem;
+      box-shadow: 0 25px 50px rgba(37,99,235,0.35);
+      transition: transform .2s, box-shadow .2s;
+      display: inline-block;
     }
 
-    .btn:hover {
-      opacity: 0.9;
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 35px 70px rgba(37,99,235,0.45);
     }
 
-    /* Sections */
+    /* SECTIONS */
     section {
-      padding: 80px 20px;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
+      padding: 120px 20px;
     }
 
     section h2 {
+      font-size: 2.7rem;
+      font-weight: 800;
       text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      color: var(--dark);
+      margin-bottom: 20px;
     }
 
-    /* Grid */
+    .subtitle {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 80px;
+      color: var(--muted);
+      font-size: 1.18rem;
+    }
+
+    /* GRID */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 36px;
     }
 
     .card {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      background: var(--card);
+      padding: 42px 36px;
+      border-radius: 20px;
+      box-shadow: 0 30px 70px rgba(2,6,23,0.06);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 45px 90px rgba(2,6,23,0.12);
     }
 
     .card h3 {
-      margin-bottom: 15px;
-      color: var(--dark);
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+      font-weight: 700;
     }
 
-    /* Process */
-    .steps {
-      counter-reset: step;
+    .card p {
+      color: var(--muted);
     }
 
-    .step {
+    /* PROCESS */
+    .process {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 48px;
+    }
+
+    .process-step {
+      padding-left: 78px;
       position: relative;
-      padding-left: 60px;
-      margin-bottom: 30px;
     }
 
-    .step::before {
-      counter-increment: step;
-      content: counter(step);
+    .process-step::before {
+      content: attr(data-step);
       position: absolute;
       left: 0;
       top: 0;
-      width: 40px;
-      height: 40px;
-      background: var(--primary);
+      width: 54px;
+      height: 54px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #fff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
+      font-weight: 800;
+      font-size: 1.15rem;
     }
 
-    /* CTA */
+    /* TESTIMONIALS */
+    .testimonials {
+      background: linear-gradient(180deg, #020617, #020617);
+      color: #fff;
+      border-radius: 36px;
+      padding: 110px 60px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 36px;
+    }
+
+    .testimonial-card p {
+      color: #e5e7eb;
+      margin-bottom: 22px;
+    }
+
+    .testimonial-card span {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* CTA / CONTACT */
     .cta {
-      background: linear-gradient(135deg, #5fa8d3, #89c2d9);
+      background: linear-gradient(135deg, var(--primary), #93c5fd);
       color: #fff;
       text-align: center;
-      padding: 80px 20px;
+      padding: 140px 20px;
     }
 
     .cta h2 {
-      color: #fff;
-      margin-bottom: 20px;
+      font-size: 3.1rem;
+      font-weight: 800;
+      margin-bottom: 22px;
     }
 
-    /* Footer */
+    .cta p {
+      max-width: 760px;
+      margin: 0 auto 46px;
+      font-size: 1.25rem;
+    }
+
+    .contact-box {
+      max-width: 520px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 18px;
+      padding: 36px;
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-box p {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    /* FOOTER */
     footer {
-      background: #111827;
+      background: #020617;
       color: #9ca3af;
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
-    }
-
-    footer p {
       font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
+      header h1 { font-size: 2.6rem; }
+      section h2 { font-size: 2.2rem; }
+      .cta h2 { font-size: 2.3rem; }
+      .testimonials { padding: 80px 30px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <header>
-    <h1>Automate What Slows You Down</h1>
-    <p>Flowxen delivers AI-powered automation that streamlines workflows, eliminates repetitive tasks, and accelerates business growth.</p>
-    <a href="#contact" class="btn">Get a Free Consultation</a>
+    <h1>Automation Systems That Run Your Business</h1>
+    <p>Flowxen designs and delivers secure, efficient, scalable, and effective AI automation systems that replace manual operations and unlock sustainable growth.</p>
+
+    <div class="hero-badges">
+      <div class="badge">🔐 Enterprise-Grade Security</div>
+      <div class="badge">⚡ Efficiency at Scale</div>
+      <div class="badge">📈 Built for Growth</div>
+      <div class="badge">🤖 AI & n8n Specialists</div>
+    </div>
+
+    <a href="#contact" class="btn-primary">Request a Free Automation Audit</a>
   </header>
 
-  <!-- Why Flowxen -->
+  <!-- WHY -->
   <section>
     <h2>Why Flowxen</h2>
+    <p class="subtitle">We don't build automations. We engineer reliable systems that become core business infrastructure.</p>
+
     <div class="grid">
       <div class="card">
-        <h3>?? Productivity First</h3>
-        <p>Eliminate manual work and free your teams to focus on high-impact tasks.</p>
+        <h3>Secure by Architecture</h3>
+        <p>Every system is designed with secure data handling, access control, and fault tolerance from day one.</p>
       </div>
       <div class="card">
-        <h3>?? Smart Automation</h3>
-        <p>Custom AI-driven workflows aligned with real business goals.</p>
+        <h3>Operational Efficiency</h3>
+        <p>Automation that removes human bottlenecks, reduces errors, and compounds productivity over time.</p>
       </div>
       <div class="card">
-        <h3>?? Built to Scale</h3>
-        <p>Automation systems that grow with your organization.</p>
+        <h3>Scalable Systems</h3>
+        <p>Infrastructure-ready automation that scales effortlessly with users, data volume, and complexity.</p>
+      </div>
+      <div class="card">
+        <h3>Effective Delivery</h3>
+        <p>Clear scope, fast execution, production-ready delivery — no half-finished workflows.</p>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- SERVICES -->
   <section>
-    <h2>Our Services</h2>
+    <h2>What We Deliver</h2>
+    <p class="subtitle">End-to-end automation delivery tailored to your business logic, tools, and growth stage.</p>
+
     <div class="grid">
       <div class="card">
         <h3>Workflow Automation</h3>
-        <p>End-to-end automation for sales, operations, and internal processes.</p>
+        <p>Sales, operations, finance, support, and internal workflows automated using n8n and custom orchestration.</p>
       </div>
       <div class="card">
-        <h3>AI Integrations</h3>
-        <p>Connect tools, systems, and data for seamless operations.</p>
+        <h3>AI & Neural Automation</h3>
+        <p>LLMs, classifiers, enrichment pipelines, and intelligent decision layers embedded into workflows.</p>
       </div>
       <div class="card">
-        <h3>Custom Solutions</h3>
-        <p>Tailored automation built around your business logic.</p>
+        <h3>Custom Automation Platforms</h3>
+        <p>Bespoke automation systems built for reliability, observability, and long-term maintainability.</p>
       </div>
     </div>
   </section>
 
-  <!-- Process -->
+  <!-- PROCESS -->
   <section>
-    <h2>Our Process</h2>
-    <div class="steps">
-      <div class="step"><strong>Discover</strong> – Identify automation opportunities</div>
-      <div class="step"><strong>Design</strong> – Build a clear automation roadmap</div>
-      <div class="step"><strong>Deploy</strong> – Implement & test systems</div>
-      <div class="step"><strong>Optimize</strong> – Scale and improve continuously</div>
+    <h2>Our Delivery Process</h2>
+    <p class="subtitle">A proven approach that ensures secure, efficient, and scalable automation delivery.</p>
+
+    <div class="process">
+      <div class="process-step" data-step="1">
+        <h3>Deep Discovery</h3>
+        <p>We analyze workflows, data flows, risks, and ROI opportunities.</p>
+      </div>
+      <div class="process-step" data-step="2">
+        <h3>System Design</h3>
+        <p>Clear architecture with security, scalability, and observability baked in.</p>
+      </div>
+      <div class="process-step" data-step="3">
+        <h3>Implementation</h3>
+        <p>Production-grade automation with error handling, logging, and monitoring.</p>
+      </div>
+      <div class="process-step" data-step="4">
+        <h3>Optimize & Scale</h3>
+        <p>Continuous improvement as volume, users, and complexity increase.</p>
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <h2>Client Feedback</h2>
+    <p class="subtitle">Trusted by founders and operators who value reliability and measurable results.</p>
+
+    <div class="grid">
+      <div class="testimonial-card">
+        <p>“Prabhat is an exceptional n8n automation expert who understands the core value of a project and delivers with absolute professionalism.”</p>
+        <span>— Ishaac</span>
+      </div>
+      <div class="testimonial-card">
+        <p>“Prabhat automated our entire business operations using scalable automation and neural networks. The efficiency gains were unprecedented.” ⭐⭐⭐⭐⭐</p>
+        <span>— Arbar</span>
+      </div>
+      <div class="testimonial-card">
+        <p>“Great work as usual — fast, competent, and highly reliable.”</p>
+        <span>— Josh</span>
+      </div>
+      <div class="testimonial-card">
+        <p>“High-quality delivery with impressive speed and clarity.”</p>
+        <span>— Josh</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <div class="cta" id="contact">
-    <h2>Ready to Automate Your Business?</h2>
-    <p>Turn automation into a competitive advantage with Flowxen.</p>
-    <br />
-    <a href="mailto:contact@flowxen.com" class="btn">Contact Us</a>
+    <h2>Let’s Build Your Automation System</h2>
+    <p>Schedule a conversation and discover how Flowxen can securely automate and scale your operations.</p>
+
+    <div class="contact-box">
+      <p><strong>Email:</strong> your-email@domain.com</p>
+      <p><strong>WhatsApp:</strong> +XX-XXXXXXXXXX</p>
+      <p><strong>LinkedIn:</strong> linkedin.com/in/your-profile</p>
+    </div>
+
+    <div style="margin-top:50px;">
+      <a href="mailto:your-email@domain.com" class="btn-primary">Start the Conversation</a>
+    </div>
   </div>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2026 Flowxen. All rights reserved.</p>
+    <p>© 2026 Flowxen — Secure • Efficient • Scalable Automation Systems</p>
   </footer>
 
 </body>
 </html>
-
-
