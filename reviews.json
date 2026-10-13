@@ -1,0 +1,11 @@
+{
+  "_help": "ADD A REVIEW: copy one {...} block below, paste it at the top of the list, change the text, save. Keep a comma between blocks. rating is 1-5. date is YYYY-MM-DD.",
+  "reviews": [
+    {"name": "Sarah", "role": "Startup Founder", "rating": 5, "date": "2025-01-01", "text": "FlowXen automated our entire lead response system. Saved 25h/week!"},
+    {"name": "Mark", "role": "Agency Owner", "rating": 5, "date": "2025-01-01", "text": "Their AI chatbots increased conversions by 34%. Incredible support."},
+    {"name": "Linda", "role": "Operations Lead", "rating": 5, "date": "2025-01-01", "text": "n8n workflow + CRM automation saved us thousands. Highly recommend."},
+    {"name": "David", "role": "Ecom Director", "rating": 5, "date": "2025-01-01", "text": "The ready-to-use AI tool for social media scheduling is game-changing."},
+    {"name": "Priya", "role": "SaaS Founder", "rating": 5, "date": "2025-01-01", "text": "From manual chaos to full automation in 2 weeks. FlowXen is elite."},
+    {"name": "James", "role": "Operations Manager", "rating": 5, "date": "2025-01-01", "text": "Cut reporting time by 90% with custom dashboards. Superb team."}
+  ]
+}
