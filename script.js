@@ -55,3 +55,11 @@ document.querySelectorAll("form[data-form]").forEach(form => {
     } catch { status.textContent = `Something went wrong. Please email ${EMAIL}.`; }
   });
 });
+
+// ===== Scroll reveal =====
+document.documentElement.classList.add("js");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+  const watch = () => document.querySelectorAll(".card:not(.reveal),h2:not(.reveal)").forEach(el => { el.classList.add("reveal"); io.observe(el); });
+  watch(); setTimeout(watch, 800); // second pass catches reviews loaded from reviews.json
+} else { document.documentElement.classList.remove("js"); }
